@@ -1,53 +1,166 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",system-ui,sans-serif;
 }
+
 body{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: antiquewhite;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:
+    radial-gradient(circle at top,#1b2735,#090a0f);
 }
+
+/* Layout */
+.main{
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+}
+
+/* Calculator Card */
 .container{
-    border: 2px solid rgb(24, 23, 23);
-    padding: 25px;
-    border-radius: 16px;
-    background:rgba(27, 28, 26, 0.801);
-    box-shadow: 0px 3px 15px rgb(24, 23, 23, 0.5);
+  padding:26px;
+  border-radius:26px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(18px);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.65),
+    inset 0 0 0 1px rgba(255,255,255,.08);
 }
-input{
-    width: 350px;
-    padding: 15px;
-    margin: 10px;
-    background: transparent;
-    box-shadow: 0px 3px 15px rgba(50, 48, 48, 0.888);
-    font-size: 40px;
-    cursor: pointer;
-    text-align: right;
-    color:aliceblue;
+
+/* Display */
+#inputbox{
+  width:340px;
+  padding:20px;
+  margin-bottom:18px;
+  font-size:36px;
+  text-align:right;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(145deg,#0c0f14,#020305);
+  color:#00ffae;
+  letter-spacing:1px;
+  box-shadow:
+    inset 6px 6px 12px rgba(0,0,0,.9),
+    inset -4px -4px 10px rgba(255,255,255,.05);
+  outline:none;
 }
-input::placeholder{
-    color: aliceblue;
+
+/* Rows */
+.row{
+  display:flex;
+  gap:12px;
+  margin-bottom:12px;
 }
+
+/* Buttons – Base */
 button{
-    width: 70px;
-    height: 50px;
-    border: none;
-    margin: 9px;
-    border-radius: 16px;
-    cursor:pointer;
-    color: whitesmoke;
-    background: transparent;
-    font-size: 23px;
-    box-shadow:0px 3px 15px rgba(3, 3, 3, 0.918);
+  flex:1;
+  height:54px;
+  border:none;
+  border-radius:16px;
+  font-size:18px;
+  cursor:pointer;
+  color:#fff;
+  background:linear-gradient(145deg,#1e1e1e,#141414);
+  box-shadow:
+    6px 6px 12px rgba(0,0,0,.8),
+    -4px -4px 10px rgba(255,255,255,.06);
+  transition:all .15s ease;
 }
+
+/* Hover & Press */
+button:hover{
+  filter:brightness(1.15);
+}
+
+button:active{
+  transform:scale(0.94);
+  box-shadow:
+    inset 4px 4px 8px rgba(0,0,0,.9),
+    inset -3px -3px 6px rgba(255,255,255,.05);
+}
+
+/* Number buttons */
+.row button:not(.equal):not(.danger){
+  color:#eaeaea;
+}
+
+/* Scientific buttons */
+.sci button{
+  background:linear-gradient(145deg,#0f3d2e,#0a2b21);
+  color:#5cffc8;
+  font-size:16px;
+}
+
+/* Operators */
+.ops button{
+  background:linear-gradient(145deg,#163d63,#0f2942);
+  color:#6fbaff;
+}
+
+/* Danger (AC / DEL) */
+.danger{
+  background:linear-gradient(145deg,#5a1b1b,#3b0f0f);
+  color:#ff8c8c;
+}
+
+/* Equal */
 .equal{
-    background-color: rgba(255, 106, 0, 0.925);
+  flex:1.5;
+  font-weight:bold;
+  background:linear-gradient(145deg,#ff9800,#ff3d00);
+  color:#fff;
+  box-shadow:
+    0 0 18px rgba(255,120,0,.7),
+    6px 6px 14px rgba(0,0,0,.7);
 }
-.btn{
-    background-color: rgb(79, 168, 168);
+
+/* Zero */
+.zero{
+  flex:2;
+}
+
+/* History Panel */
+.history{
+  width:250px;
+  padding:22px;
+  border-radius:26px;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(14px);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.7),
+    inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+.history h3{
+  text-align:center;
+  margin-bottom:14px;
+  color:#00ffae;
+  letter-spacing:1px;
+}
+
+.history ul{
+  list-style:none;
+  max-height:420px;
+  overflow-y:auto;
+  padding-right:4px;
+}
+
+.history li{
+  padding:10px;
+  margin-bottom:8px;
+  border-radius:14px;
+  background:rgba(255,255,255,.08);
+  font-size:14px;
+  color:#ddd;
+  transition:.15s;
+}
+
+.history li:hover{
+  background:rgba(255,255,255,.16);
 }
