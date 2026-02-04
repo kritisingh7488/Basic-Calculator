@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css"/>
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Calculator</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <input type="text" placeholder="0" id="inputbox" readonly>
-        <div>
-            <button class="btn">AC</button>
-            <button class="btn">DEL</button>
-            <button class="btn">%</button>
-            <button class="btn">/</button>
-        </div>
-        <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="btn">x</button>
-        </div>
-        <div>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="btn">-</button>
-        </div>
-        <div>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="btn">+</button>
-        </div>
-        <div>
-            <button>00</button>
-            <button>0</button>
-            <button>.</button>
-            <button class="equal">=</button>
-        </div>
-    </div>
-    <script src="script.js"></script> 
-    
 
-  
+<div class="main">
+  <div class="container">
+    <input type="text" id="inputbox" placeholder="0" readonly>
+
+    <div class="row sci">
+      <button>sin</button><button>cos</button><button>tan</button><button>√</button>
+    </div>
+
+    <div class="row sci">
+      <button>log</button><button>xʸ</button><button>(</button><button>)</button>
+    </div>
+
+    <div class="row ops">
+      <button class="danger">AC</button>
+      <button class="danger">DEL</button>
+      <button>%</button>
+      <button>/</button>
+    </div>
+
+    <div class="row">
+      <button>7</button><button>8</button><button>9</button><button>*</button>
+    </div>
+    <div class="row">
+      <button>4</button><button>5</button><button>6</button><button>-</button>
+    </div>
+    <div class="row">
+      <button>1</button><button>2</button><button>3</button><button>+</button>
+    </div>
+    <div class="row">
+      <button class="zero">0</button>
+      <button>.</button>
+      <button class="equal">=</button>
+    </div>
+  </div>
+
+  <div class="history">
+    <h3>History</h3>
+    <ul id="historyList"></ul>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
 </body>
 </html>
